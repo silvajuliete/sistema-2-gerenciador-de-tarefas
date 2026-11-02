@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Dia | Gerenciador de Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><div class="brand"><span class="brand-icon">✓</span><div><strong>Meu Dia</strong><small>Gerenciador de tarefas</small></div></div><span class="local-tag">● Dados salvos neste navegador</span></header>
+  <main class="container">
+    <section class="hero"><div><p class="eyebrow">ORGANIZE SUA ROTINA</p><h1>Faça acontecer.</h1><p class="muted">Um passo de cada vez. Organize suas tarefas e acompanhe seu progresso.</p></div><div class="date-box"><span id="todayLabel"></span><strong id="todayDate"></strong></div></section>
+    <section class="summary">
+      <article class="summary-card"><span>Total de tarefas</span><strong id="totalCount">0</strong></article>
+      <article class="summary-card"><span>Pendentes</span><strong id="pendingCount">0</strong></article>
+      <article class="summary-card"><span>Concluídas</span><strong id="doneCount">0</strong></article>
+      <article class="summary-card progress-card"><span>Progresso</span><strong id="progressPercent">0%</strong><div class="progress"><span id="progressBar"></span></div></article>
+    </section>
+    <section class="workspace">
+      <section class="panel form-panel"><p class="eyebrow">NOVA ATIVIDADE</p><h2 id="formTitle">Adicionar tarefa</h2><form id="taskForm"><input type="hidden" id="taskId"><label>O que precisa ser feito?<input id="taskTitle" maxlength="90" required placeholder="Ex.: Estudar JavaScript"></label><label>Descrição (opcional)<textarea id="taskDescription" rows="3" maxlength="240" placeholder="Adicione detalhes..."></textarea></label><div class="form-grid"><label>Prioridade<select id="taskPriority"><option value="media">Média</option><option value="alta">Alta</option><option value="baixa">Baixa</option></select></label><label>Prazo<input id="taskDate" type="date"></label></div><div class="form-actions"><button class="button primary" id="saveTaskBtn" type="submit">＋ Adicionar tarefa</button><button class="button secondary hidden" id="cancelEditBtn" type="button">Cancelar</button></div></form></section>
+      <section class="panel list-panel"><div class="list-heading"><div><p class="eyebrow">SUA LISTA</p><h2>Minhas tarefas</h2></div><select id="statusFilter" aria-label="Filtrar tarefas"><option value="todas">Todas</option><option value="pendente">Pendentes</option><option value="concluida">Concluídas</option></select></div><div class="task-list" id="taskList"></div><p class="empty hidden" id="emptyMessage">Nenhuma tarefa por aqui. Adicione uma atividade ao lado.</p></section>
+    </section>
+    <footer>Meu Dia · Projeto demonstrativo com HTML, CSS e JavaScript</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
